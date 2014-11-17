@@ -110,7 +110,7 @@ class brailleConverter:
         elif (s == 'g' or s=='7'):
             c.setPos1(1)
             c.setPos2(1)
-            c.setPos4(1)
+            c.setPos3(1)
             c.setPos4(1)
         elif (s == 'h' or s=='8'):
             c.setPos1(1)
@@ -435,7 +435,6 @@ class filePrint:
                 str=myfile.read().replace('\n', '')
                 
             str = str.lower()
-            print(str)
     
             test = brailleConverter(str)
             printFormat(test.getCellList())                
