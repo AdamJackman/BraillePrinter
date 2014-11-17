@@ -424,13 +424,32 @@ class printFormat:
             print()
         ser.write(done)
         ser.close()
-                    
-import sys                
-class printGUI():
-    response = input("Enter the text to print: ")
-    response = response.lower()
-    test = brailleConverter(response)
-    printFormat(test.getCellList())
+ 
+class filePrint:
+    
+    def __init__(self, file):
+        print(file)
+        
+        try:
+            with open (file, "r") as myfile:
+                str=myfile.read().replace('\n', '')
+                
+            str = str.lower()
+            print(str)
+    
+            test = brailleConverter(str)
+            printFormat(test.getCellList())                
+        except:
+            return None
+            
+        
+        
+#import sys                
+#class printGUI():
+    #response = input("Enter the text to print: ")
+    #response = response.lower()
+    #test = brailleConverter(response)
+    #printFormat(test.getCellList())
 
 #begin the interface everything
-printGUI()
+#printGUI()
