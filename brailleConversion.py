@@ -425,13 +425,12 @@ class printFormat:
         ser.write(done)
         ser.close()
                     
-                
+import sys                
 class printGUI():
-    print("what up")
+    response = input("Enter the text to print: ")
+    response = response.lower()
+    test = brailleConverter(response)
+    printFormat(test.getCellList())
 
-
-
-#call everything
+#begin the interface everything
 printGUI()
-test = brailleConverter("adam jackman")
-printFormat(test.getCellList())
